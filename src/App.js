@@ -1,3 +1,4 @@
+import Create from './Create';
 import Home from './Home';
 import Navbar from './Navbar';
 
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Home />
+      <Create />
     </div>
   );
 }
