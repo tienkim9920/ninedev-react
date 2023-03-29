@@ -41,6 +41,10 @@ body {
 }
 
 /* blog previews / list */
+.blog-list {
+  margin-top: 2rem;
+}
+
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;
@@ -57,6 +61,14 @@ body {
 }
 .blog-preview a{
   text-decoration: none;
+}
+.blog-preview button {
+  background: #003A57;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* blog details page */
