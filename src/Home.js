@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -15,15 +15,19 @@ const Home = () => {
         setBlogs(blogs.filter(item => item.id !== id));
     }
 
-    const [name, setName] = useState(true);
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        console.log("Home Page");
+    }, [show])
 
     return (
         <div>
             {
-                name && 
+                show && 
                 <BlogList handleDeleteBlog={handleDeleteBlog} blogs={blogs} author="Nine Dev Blog"/>
             }
-            <button onClick={() => setName(false)}>Hide BlockList</button>
+            <button onClick={() => setShow(true)}>Show Blog List</button>
         </div>
     )
 }
