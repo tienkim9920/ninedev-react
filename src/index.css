@@ -45,6 +45,10 @@ body {
   margin-top: 2rem;
 }
 
+.blog-list h2 {
+  color: #003A57;
+}
+
 .blog-preview {
   padding: 10px 16px;
   margin: 20px 0;

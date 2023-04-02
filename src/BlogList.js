@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const BlogList = (props) => {
 
     const { blogs, author, handleDeleteBlog } = props;
@@ -5,6 +7,16 @@ const BlogList = (props) => {
     const onDelete = (id, title) => {
         handleDeleteBlog(id, title);
     }
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            console.log("Block List");
+        }, 1000);
+
+        return () => {
+            clearInterval(timer);
+        }
+    })
 
     return (
         <div className="blog-list">

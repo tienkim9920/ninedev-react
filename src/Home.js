@@ -15,9 +15,15 @@ const Home = () => {
         setBlogs(blogs.filter(item => item.id !== id));
     }
 
+    const [name, setName] = useState(true);
+
     return (
         <div>
-            <BlogList handleDeleteBlog={handleDeleteBlog} blogs={blogs} author="Nine Dev Blog"/>
+            {
+                name && 
+                <BlogList handleDeleteBlog={handleDeleteBlog} blogs={blogs} author="Nine Dev Blog"/>
+            }
+            <button onClick={() => setName(false)}>Hide BlockList</button>
         </div>
     )
 }
