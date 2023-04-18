@@ -13,7 +13,7 @@ const BlogList = (props) => {
                 blogs.length && blogs.map(item => (
                     <div key={item.id} className="blog-preview">
                         <h2>{item.title}</h2>
-                        <div>{item.body}</div>
+                        <div className="line-clamp">{item.body}</div>
                         <button onClick={() => onDelete(item.id, item.title)}>Delete</button>
                     </div>
                 ))

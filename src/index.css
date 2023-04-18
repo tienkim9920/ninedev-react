@@ -81,6 +81,7 @@ body {
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: .5rem;
 }
 
 /* blog details page */
@@ -131,4 +132,11 @@ body {
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
