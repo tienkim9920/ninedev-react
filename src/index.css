@@ -7,6 +7,14 @@
   color: #333;
 }
 
+.red {
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
+
 body {
   width: 768px;
   margin: auto;
