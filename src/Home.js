@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
@@ -7,7 +6,7 @@ const Home = () => {
     const { data: blogs, isError, isLoading } = useFetch('http://localhost:8000/blogs');
 
     return (
-        <div className="wrapper-body">
+        <div>
             {isError && <div>Server Internal Error</div>}
             {isLoading && <div>Please waiting for minutes</div>}
             {

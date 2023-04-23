@@ -1,8 +1,7 @@
 import Create from './Create';
 import Home from './Home';
 import MainLayout from './MainLayout';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
-import NotFound from './NotFound';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 const appRoutes = [
   {
@@ -13,18 +12,14 @@ const appRoutes = [
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
         path: '/create',
         element: <Create />
-      },
-      {
-        path: '*',
-        element: <NotFound />,
-      },
+      }
     ]
-  },
+  }
 ];
 
 const router = createBrowserRouter([
@@ -32,12 +27,12 @@ const router = createBrowserRouter([
     element: (
       <Outlet />
     ),
-    children: appRoutes,
-  },
-]);
+    children: appRoutes
+  }
+])
 
-const App = () => {
-  return <RouterProvider router={router} />;
-};
+function App() {
+  return <RouterProvider router={router} />
+}
 
 export default App;
