@@ -7,7 +7,7 @@ const Home = () => {
     const { data: blogs, isError, isLoading } = useFetch('http://localhost:8000/blogs');
 
     return (
-        <div>
+        <div className="wrapper-body">
             {isError && <div>Server Internal Error</div>}
             {isLoading && <div>Please waiting for minutes</div>}
             {

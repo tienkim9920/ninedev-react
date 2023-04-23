@@ -15,9 +15,9 @@
   color: yellow;
 }
 
-body {
+.wrapper-body {
   width: 768px;
-  margin: auto;
+  margin: 3rem auto 0;
 }
 
 .navbar {
