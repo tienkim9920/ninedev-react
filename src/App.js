@@ -1,3 +1,4 @@
+import BlogDetail from './BlogDetail';
 import Create from './Create';
 import Home from './Home';
 import MainLayout from './MainLayout';
@@ -17,6 +18,10 @@ const appRoutes = [
       {
         path: '/create',
         element: <Create />
+      },
+      {
+        path: '/blog/:id',
+        element: <BlogDetail />
       }
     ]
   }
