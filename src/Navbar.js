@@ -1,19 +1,28 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
+  const activeNavbar = {
+    color: "white",
+    background: "#003A57",
+    borderRadius: "8px",
+  };
+
   return (
     <nav className="navbar">
       <h1>Nine Dev</h1>
-      <div className="links">
-        <a href="/">Home</a>
-        <a
-          href="/create"
-          style={{
-            color: "white",
-            background: "#003A57",
-            borderRadius: "8px",
-          }}
+      <div className="links" style={{}}>
+        <NavLink
+          to="/"
+          style={({ isActive }) => isActive ? activeNavbar : {}}
+        >
+            Home
+        </NavLink>
+        <NavLink
+          to="/create"
+          style={({ isActive }) => isActive ? activeNavbar : {}}
         >
           New Blog
-        </a>
+        </NavLink>
       </div>
     </nav>
   );
