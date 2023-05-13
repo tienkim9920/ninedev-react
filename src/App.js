@@ -1,7 +1,7 @@
-import BlogDetail from './BlogDetail';
-import Create from './Create';
-import Home from './Home';
-import MainLayout from './MainLayout';
+import BlogDetail from './pages/BlogDetail';
+import Create from './pages/Create';
+import Home from './pages/Home';
+import MainLayout from './layouts/MainLayout';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 
 const appRoutes = [

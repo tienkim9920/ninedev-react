@@ -119,7 +119,7 @@
   color: #003A57;
   margin-bottom: 30px;
 }
-.create input, .create textarea, .create select {
+input, textarea, select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -141,4 +141,16 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items {
+  align-items: center;
 }

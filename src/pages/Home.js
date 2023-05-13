@@ -1,9 +1,11 @@
-import BlogList from "./BlogList";
-import useFetch from "./useFetch";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import BlogList from "../layouts/BlogList";
+import useFetch from "../hooks/useFetch";
+import { useSelector } from "react-redux";
 
 const Home = () => {
 
-    const { data: blogs, isError, isLoading } = useFetch('http://localhost:8000/blogs');
+    const { data: blogs, isError, isLoading } = useFetch('https://backend-crud-ten.vercel.app/blogs');
 
     return (
         <div>

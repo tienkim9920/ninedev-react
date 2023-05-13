@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { createBlog } from "../store/blog/blogAction";
 
 const Create = () => {
     const [blog, setBlog] = useState({});
     const history = useNavigate();
+
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -11,7 +15,7 @@ const Create = () => {
 
         (async () => {
             const body = {id: Math.random(), ...blog};
-            const res = await fetch('http://localhost:8000/blogs', {
+            const res = await fetch('https://backend-crud-ten.vercel.app/blogs', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -20,7 +24,7 @@ const Create = () => {
             })
             const { data, status } = await res.json();
             if (status) {
-                console.log(data);
+                dispatch(createBlog(data));
                 history('/');
             }
         })();
