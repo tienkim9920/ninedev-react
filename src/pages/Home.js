@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
 
-    const { data: blogs, isError, isLoading } = useFetch('https://backend-crud-ten.vercel.app/blogs');
+    const { data: blogs, isError, isLoading } = useFetch('https://ninedev-api.vercel.app/blogs');
 
     return (
         <div>

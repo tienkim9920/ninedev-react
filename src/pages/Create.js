@@ -15,7 +15,7 @@ const Create = () => {
 
         (async () => {
             const body = {id: Math.random(), ...blog};
-            const res = await fetch('https://backend-crud-ten.vercel.app/blogs', {
+            const res = await fetch('https://ninedev-api.vercel.app/blogs', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

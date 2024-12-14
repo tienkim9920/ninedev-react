@@ -11,13 +11,13 @@ const BlogDetail = () => {
     data: blog,
     isLoading,
     isError,
-  } = useFetch(`https://backend-crud-ten.vercel.app/blogs/${id}`, id);
+  } = useFetch(`https://ninedev-api.vercel.app/blogs/${id}`, id);
 
   const dispatch = useDispatch();
 
   const handleDelete = () => {
     (async () => {
-      const res = await fetch(`https://backend-crud-ten.vercel.app/blogs/${id}`, {
+      const res = await fetch(`https://ninedev-api.vercel.app/blogs/${id}`, {
           method: 'DELETE'
         })
       const { status } = await res.json();
