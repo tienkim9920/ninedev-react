@@ -14,7 +14,7 @@ const QRCodeScanner = () => {
       <h2>Quét mã QR</h2>
       <Html5QrcodePlugin
         fps={10}
-        qrbox={250}
+        qrbox={200}
         disableFlip={false}
         qrCodeSuccessCallback={onNewScanResult}
       />
