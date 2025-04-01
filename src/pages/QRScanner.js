@@ -1,31 +1,24 @@
 import React, { useState } from "react";
-import { QrReader } from "react-qr-reader";
+import Html5QrcodePlugin from "./Html5QrcodePlugin";
+import ResultContainerPlugin from "./ResultContainerPlugin";
 
 const QRCodeScanner = () => {
-  const [scannedData, setScannedData] = useState("");
+  const [decodedResults, setDecodedResults] = useState([]);
+  const onNewScanResult = (decodedText, decodedResult) => {
+    console.log("App [result]", decodedResult);
+    setDecodedResults(prev => [...prev, decodedResult]);
+  };
 
   return (
-    <div className="flex flex-col items-center p-4 gap-4 bg-gray-900 text-white rounded-lg shadow-lg">
-      <h2 className="text-xl font-bold">QR Code Scanner</h2>
-      <QrReader
-        constraints={{ facingMode: "environment" }} // Dùng camera sau
-        scanDelay={500}
-        onResult={(result, error) => {
-          if (result) {
-            setScannedData(result.text);
-          }
-          if (error) {
-            console.warn("Không tìm thấy mã QR:", error);
-          }
-        }}
-        style={{ width: "100%", maxWidth: "500px", border: "2px solid white" }}
+    <div className="container">
+      <h2>Quét mã QR</h2>
+      <Html5QrcodePlugin
+        fps={10}
+        qrbox={250}
+        disableFlip={false}
+        qrCodeSuccessCallback={onNewScanResult}
       />
-      {scannedData && (
-        <div className="p-2 mt-2 bg-gray-700 rounded-md">
-          <h3 className="text-lg font-bold">Scanned Data:</h3>
-          <pre className="text-green-400">{scannedData}</pre>
-        </div>
-      )}
+      <ResultContainerPlugin results={decodedResults} />
     </div>
   );
 };
