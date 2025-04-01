@@ -14,8 +14,14 @@ const QRCodeScanner = () => {
       <h2>Quét mã QR</h2>
       <Html5QrcodePlugin
         fps={10}
-        qrbox={200}
+        qrbox={{ width: 250, height: 250 }}
+        aspectRatio={1}
         disableFlip={false}
+        videoConstraints={{
+          facingMode: "environment",
+          width: { ideal: 1280 },
+          height: { ideal: 720 },
+        }}
         qrCodeSuccessCallback={onNewScanResult}
       />
       <ResultContainerPlugin results={decodedResults} />
