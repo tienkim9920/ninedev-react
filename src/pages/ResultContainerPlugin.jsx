@@ -1,6 +1,6 @@
 import React from 'react';
 
-function filterResults (results) {
+function filterResults(results) {
     let filteredResults = [];
     for (var i = 0; i < results.length; ++i) {
         if (i === 0) {
@@ -45,9 +45,9 @@ const ResultContainerTable = ({ data }) => {
 const ResultContainerPlugin = (props) => {
     const results = filterResults(props.results);
     return (
-        <div className='Result-container'>
-            <div className='Result-header'>Scanned results ({results.length})</div>
-            <div className='Result-section'>
+        <div>
+            <div>Scanned results ({results.length})</div>
+            <div>
                 <ResultContainerTable data={results} />
             </div>
         </div>

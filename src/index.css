@@ -16,7 +16,6 @@
 }
 
 .wrapper-body {
-  width: 768px;
   margin: 3rem auto 0;
 }
 
@@ -28,20 +27,25 @@
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
 }
+
 .navbar h1 {
   color: #003A57;
 }
+
 .navbar .links {
   margin-left: auto;
 }
+
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
 }
+
 .navbar a:hover {
   color: #003A57;
 }
+
 .content {
   max-width: 600px;
   margin: 40px auto;
@@ -65,17 +69,21 @@
   border-bottom: 1px solid #fafafa;
   cursor: pointer;
 }
+
 .blog-preview:hover {
-  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
+
 .blog-preview h2 {
   font-size: 20px;
   color: #003A57;
   margin-bottom: 8px;
 }
-.blog-preview a{
+
+.blog-preview a {
   text-decoration: none;
 }
+
 .blog-preview button {
   background: #003A57;
   color: #fff;
@@ -92,9 +100,11 @@
   color: #003A57;
   margin-bottom: 10px;
 }
+
 .blog-details div {
   margin: 20px 0;
 }
+
 .blog-details button {
   background: #003A57;
   color: #fff;
@@ -110,16 +120,21 @@
   margin: 0 auto;
   text-align: center;
 }
+
 .create label {
   text-align: left;
   display: block;
 }
+
 .create h2 {
   font-size: 20px;
   color: #003A57;
   margin-bottom: 30px;
 }
-input, textarea, select {
+
+input,
+textarea,
+select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -127,6 +142,7 @@ input, textarea, select {
   box-sizing: border-box;
   display: block;
 }
+
 .create button {
   background: #003A57;
   color: #fff;
@@ -139,7 +155,7 @@ input, textarea, select {
 .line-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -153,4 +169,17 @@ input, textarea, select {
 
 .align-items {
   align-items: center;
+}
+
+/* QRCODE */
+.wrapper-qrcode .container-qrcode {
+  border: none !important;
+}
+
+.wrapper-qrcode #html5qr-code-full-region__scan_region {
+  display: none;
+}
+
+.wrapper-qrcode img {
+  display: none;
 }
