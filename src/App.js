@@ -3,6 +3,7 @@ import Create from './pages/Create';
 import Home from './pages/Home';
 import MainLayout from './layouts/MainLayout';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import QRCodeScanner from './pages/QRScanner';
 
 const appRoutes = [
   {
@@ -22,7 +23,11 @@ const appRoutes = [
       {
         path: '/blog/:id',
         element: <BlogDetail />
-      }
+      },
+      {
+        path: '/scanner',
+        element: <QRCodeScanner />
+      },
     ]
   }
 ];
