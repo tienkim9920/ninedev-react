@@ -23,8 +23,8 @@ const QRCodeCamera = () => {
     const constraints = {
       video: {
         facingMode: isMobile ? { exact: "environment" } : "user", // Mobile → camera sau, Laptop → camera trước
-        width: { ideal: 1280 },
-        height: { ideal: 720 },
+        width: { ideal: 1080 },
+        height: { ideal: 1080 },
       },
     };
 
@@ -51,7 +51,7 @@ const QRCodeCamera = () => {
 
     try {
       const response = await axios.post(
-        "http://14.186.115.110:8000/scan_qr/",
+        "http://192.168.1.7:8000/scan_qr/",
         formData
       );
       setQrResult(response.data.qr_data || response.data.error);
