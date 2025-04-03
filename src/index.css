@@ -175,11 +175,3 @@ select {
 .wrapper-qrcode .container-qrcode {
   border: none !important;
 }
-
-/* .wrapper-qrcode #html5qr-code-full-region__scan_region {
-  display: none;
-} */
-
-.wrapper-qrcode img {
-  display: none;
-}

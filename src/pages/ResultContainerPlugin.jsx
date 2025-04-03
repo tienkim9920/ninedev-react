@@ -46,7 +46,7 @@ const ResultContainerPlugin = (props) => {
     const results = filterResults(props.results);
     return (
         <div>
-            <div>Scanned results ({results.length})</div>
+            <div>Kết quả Scan ({results.length})</div>
             <div>
                 <ResultContainerTable data={results} />
             </div>
