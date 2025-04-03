@@ -51,7 +51,7 @@ const QRCodeCamera = () => {
 
     try {
       const response = await axios.post(
-        "http://192.168.1.7:8000/scan_qr/",
+        "http://14.186.115.110:8000/scan_qr/",
         formData
       );
       setQrResult(response.data.qr_data || response.data.error);
