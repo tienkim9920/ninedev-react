@@ -23,7 +23,7 @@ const QRCodeUpload = () => {
     formData.append("file", selectedFile);
 
     try {
-      const response = await axios.post("http://localhost:8000/scan_qr/", formData, {
+      const response = await axios.post("http://192.168.1.7:8000/scan_qr/", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
