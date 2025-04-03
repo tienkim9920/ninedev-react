@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import MainLayout from './layouts/MainLayout';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import QRCodeScanner from './pages/QRScanner';
+import QRCodeUpload from './pages/QRCodeUpload';
+import QRCodeCamera from './pages/QRCodeCamera';
 
 const appRoutes = [
   {
@@ -27,6 +29,14 @@ const appRoutes = [
       {
         path: '/scanner',
         element: <QRCodeScanner />
+      },
+      {
+        path: '/camera-qrcode',
+        element: <QRCodeCamera />
+      },
+      {
+        path: '/upload-qrcode',
+        element: <QRCodeUpload />
       },
     ]
   }
