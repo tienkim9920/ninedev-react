@@ -4,30 +4,33 @@ import axios from "axios";
 const QRCodeCamera = () => {
   const videoRef = useRef(null);
   const [qrResult, setQrResult] = useState("");
-  const [isBackCamera, setIsBackCamera] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Kiểm tra nếu là mobile (Android hoặc iOS)
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/android|iphone|ipad|ipod/i.test(userAgent)) {
+      setIsMobile(true);
+    }
+  }, []);
 
   const startCamera = async () => {
-    try {
-      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-        alert("Trình duyệt của bạn không hỗ trợ camera!");
-        return;
-      }
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      alert("Trình duyệt của bạn không hỗ trợ camera!");
+      return;
+    }
 
-      const constraints = {
-        video: {
-          facingMode: "environment", // Ưu tiên camera sau
-          width: { ideal: 1280 },
-          height: { ideal: 720 },
-        },
-      };
+    const constraints = {
+      video: {
+        facingMode: isMobile ? { exact: "environment" } : "user", // Mobile → camera sau, Laptop → camera trước
+        width: { ideal: 1280 },
+        height: { ideal: 720 },
+      },
+    };
 
-      const stream = await navigator.mediaDevices.getUserMedia(constraints);
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-      }
-    } catch (err) {
-      console.error("Không thể mở camera", err);
-      alert("Lỗi khi mở camera. Kiểm tra quyền hoặc thử trình duyệt khác.");
+    const stream = await navigator.mediaDevices.getUserMedia(constraints);
+    if (videoRef.current) {
+      videoRef.current.srcObject = stream;
     }
   };
 
